@@ -3,6 +3,10 @@ package Repository;
 import Entities.Student;
 
 public class StudentRepo extends InMemoryRepository<Student>{
+    public StudentRepo() {
+        super();
+    }
+
     @Override
     public Student update(Student student) {
         Student updatedStudent = this.repoList.stream().filter(stud -> stud.getStudentId() == student.getStudentId()).findFirst().orElseThrow();
