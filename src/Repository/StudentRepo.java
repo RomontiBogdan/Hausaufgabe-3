@@ -7,6 +7,11 @@ public class StudentRepo extends InMemoryRepository<Student>{
         super();
     }
 
+    /**
+     * Updates the student from repo
+     * @param student
+     * @return updated student
+     */
     @Override
     public Student update(Student student) {
         Student updatedStudent = this.repoList.stream().filter(stud -> stud.getStudentId() == student.getStudentId()).findFirst().orElseThrow();
